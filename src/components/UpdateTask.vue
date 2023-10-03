@@ -13,19 +13,24 @@
             <label>Set Reminder?</label>
             <input type="checkbox" v-model="reminder" name =reminder/>
         </div>
-        <input type="submit" value="Save Task" class="btn btn-block"/>
+        <input type="submit" value="Update Task" class="btn btn-block"/>
 
     </form>
 </template>
 
 <script>
 export default {
-    name:'AddTask',
+    name:'UpdateTask',
+    props:{
+      task:{
+        type: Object
+      }
+    },
     data(){
         return {
-            text: '',
-            day: '',
-            reminder: false
+            text: 'hello',
+            day: 'world',
+            reminder: true
         }
     },
     methods:
@@ -45,12 +50,12 @@ export default {
                 day: this.day,
                 reminder: this.reminder
             }
-
-            this.$emit('add-task', newTask)
-            console.log(newTask)
-            this.text =''
-            this.day = ''
-            this.reminder= false
+            // const id =1
+            // this.$emit('update-task', id)
+            // console.log(id)
+            // this.text ='task'
+            // this.day = 'day'
+            // this.reminder= false
         }
     }
 }

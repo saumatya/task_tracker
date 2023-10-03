@@ -4,7 +4,11 @@
             {{ task.text }}
         </h3> -->
         <!-- further reading -->
-        <Task @toggle-reminder = "$emit('toggle-reminder',task.id)" @delete-task1="$emit('delete-task2',task.id)" :taskHere = "task"/>
+        <Task 
+            @toggle-reminder = "$emit('toggle-reminder',task.id)" 
+            @delete-task1="$emit('delete-task2',task.id)" :taskHere = "task" 
+            @update-task1="$emit('update-task2',task.id)" 
+        />
     </div>
 </template>
 <script>
@@ -19,6 +23,6 @@ import Task from './Task'
         },
         // emits: ['delete-task2','delete-task1']
         // further reading
-        emits: ['delete-task2','delete-task1','toggle-reminder']
+        emits: ['delete-task2','delete-task1','update-task1','update-task2','toggle-reminder']
     }
 </script>

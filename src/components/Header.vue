@@ -5,7 +5,12 @@
             @btn-click="$emit('toggle-add-task')"
             :text="showAddTask ? 'Close' : 'Add Task'"
             :color="showAddTask ? 'red' : 'green'"
-        />        
+        />       
+        <Button
+            @btn-click="$emit('toggle-update-task')"
+            :text="showUpdateTask ? 'Close' : 'Update Task'"
+            :color="showUpdateTask ? 'red' : 'green'"
+        />  
         
         <!-- <Button text="Update Task" color="blue"/>
         <Button text="Delete Task" color="red" /> -->
@@ -19,7 +24,8 @@ import Button from './Button'
         name: 'Header',
         props : {
             title: String,
-            showAddTask: Boolean
+            showAddTask: Boolean,
+            showUpdateTask: Boolean
     },
         components: {
             Button
